@@ -20,7 +20,7 @@ class Header extends Component {
 		const renderListStyle = {width:"100%", textAlign:"center", marginBottom:"20px"}
 	
 		return(
-			<div className="container">
+			<div>
 				<div style={topRowStyle} className="row">
 					<div className="col-xs-2">
 						<h3><i className="glyphicon glyphicon-chevron-left"></i></h3>

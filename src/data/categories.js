@@ -4,7 +4,7 @@ const categories = [
       id: 1,
       title: "Men's Outerwears",
       img_src: "mens_outerwear",
-      img_alt: "",
+      img_alt: "Men's Outerwears",
       size:"col-xs-12"
    },
    {
@@ -12,7 +12,7 @@ const categories = [
       id: 2,
       title: "Ladies Outerwears",
       img_src: "ladies_outerwear",
-      img_alt: "",
+      img_alt: "Ladies Outerwears",
       size:"col-xs-12"
    },
    {
@@ -20,7 +20,7 @@ const categories = [
       id: 3,
       title: "Men's T-Shirts",
       img_src: "mens_tshirts",
-      img_alt: "",
+      img_alt: "Men's T-Shirts",
       size:"col-xs-6"
    },
    {
@@ -28,7 +28,7 @@ const categories = [
       id: 4,
       title: "Ladies T-Shirts",
       img_src: "ladies_tshirts",
-      img_alt: "",
+      img_alt: "Ladies T-Shirts",
       size:"col-xs-6"
    }
 ];
