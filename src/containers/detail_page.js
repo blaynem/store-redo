@@ -3,12 +3,36 @@ import React, { Component } from 'react';
 import Items from '../data/items';
 
 class DetailPage extends Component {
+	constructor(props){
+		super(props)
+
+		this.state = { sizeChoice: "xs", quantityChoice: 1}
+		this.onClick = this.onClick.bind(this);
+		this.onChoiceChange = this.onChoiceChange.bind(this);
+	}
+
+	// on button click add to cart
+	onClick(e) {
+		console.log(this.state.sizeChoice, this.state.quantityChoice)
+	}
+
+	// on selection of {name}, switch to new selected value
+	onChoiceChange(e) {
+		const target = e.target
+		const value = target.value
+		const name = target.name
+
+		this.setState({ [name]: value})
+	}
+
+	// renders the size/quantity/features lists
+	// depending on if you set the type to option or list
 	renderLists(toList, type){
 		if (type === "option"){
 			return toList.map((item, i) => {
-				return <option key={item + i}>{item}</option>
+				return <option value={item} key={item + i}>{item}</option>
 			})
-		} else if (type === "li") {
+		} else if (type === "list") {
 			return toList.map((item, i) => {
 				return <li key={item + i}>{item}</li>
 			})
@@ -45,24 +69,38 @@ class DetailPage extends Component {
 			color: "black",
 			textTransform: "uppercase"
 		}
+		const sizeListStyles = {
+			marginLeft:"54px",
+			width:"75%",
+			height:"30px",
+			backgroundColor:"white",
+			textTransform:"uppercase"
+		}
+		const quantityListStyles = {
+			marginLeft:"25px",
+			marginTop:"10px",
+			width:"75%",
+			height:"30px",
+			backgroundColor:"white"
+		}
 
 		return(
-			<div style={{margin:0}} className="row">
+			<div className="row">
 				<div className="col-sm-6">
 					<img style={imgStyle} src={imgsrc} alt={details.text} className="img-responsive"/>
 				</div>
 				<div className="col-sm-6">
 					<h2>{details.text}</h2>
 					<h3>${details.price}</h3>
-					<div style={{margin:0}} className="row">
+					<div className="row">
 						<span>Size:</span>
-						<select style={{marginLeft:"54px", width:"75%", height:"30px", backgroundColor:"white", textTransform:"uppercase"}} className="selectpicker">
+						<select name="sizeChoice" style={sizeListStyles} value={this.state.sizeChoice} onChange={this.onChoiceChange}>
 							{this.renderLists(details.sizes, "option")}
 						</select>
 					</div>
-					<div style={{margin:0}} className="row">
+					<div className="row">
 						<span>Quantity:</span>
-						<select style={{marginLeft:"25px", marginTop:"10px", width:"75%", height:"30px", backgroundColor:"white"}} className="selectpicker">
+						<select name="quantityChoice" style={quantityListStyles} value={this.state.quantityChoice} onChange={this.onChoiceChange}>
 							{this.renderLists([1, 2, 3, 4, 5], "option")}
 						</select>
 					</div>
@@ -70,11 +108,12 @@ class DetailPage extends Component {
 					<h4>{details.description}</h4>
 					<h3>Features</h3>
 					<ul>
-						{this.renderLists(details.features, "li")}
+						{this.renderLists(details.features, "list")}
 					</ul>
-					<div style={{margin:0}} className="row">
+					<div className="row">
 						<button
 							style={buttonStyle}
+							onClick={this.onClick}
 							type="button">Add To Cart</button>
 					</div>
 				</div>
