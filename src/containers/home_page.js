@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Categories from '../data/categories';
 import HomePageCategories from '../components/home_page_categories';
 
-class Home extends Component {
+class HomePage extends Component {
 
 	renderHomePageCats() {
 		return Categories.map((item) => {
@@ -20,4 +20,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default HomePage;
