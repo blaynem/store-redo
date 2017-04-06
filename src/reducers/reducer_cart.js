@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from '../actions';
+import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions';
 
 const INITIAL_STATE = []
 
