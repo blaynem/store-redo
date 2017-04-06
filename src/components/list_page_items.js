@@ -11,8 +11,13 @@ const textStyle = {
 	color:"black"
 }
 
+const listsDetailsStyle = {
+	textAlign:"center",
+	margin:"40px 0"
+}
+
 const ListPageItems = (props) => (
-	<div style={{padding:0}} className="col-xs-6 col-sm-4">
+	<div className="col-xs-6 col-sm-4">
 		<Link to={`/detail/${props.catId}/${props.lists.code}`}>
 			<div className="row">
 				<img
@@ -20,7 +25,7 @@ const ListPageItems = (props) => (
 					src={`/images/${props.lists.img_src[1]}.jpg`}
 					alt={props.lists.text}
 					className="img-responsive"/>
-				<div style={{textAlign:"center", margin:"40px 0"}} className="row">
+				<div style={listsDetailsStyle} className="row">
 					<h3 style={textStyle}>{props.lists.text}</h3>
 					<h3 style={textStyle}>${props.lists.price}</h3>
 				</div>
