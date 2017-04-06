@@ -87,20 +87,32 @@ class DetailPage extends Component {
 		return(
 			<div className="row">
 				<div className="col-sm-6">
-					<img style={imgStyle} src={imgsrc} alt={details.text} className="img-responsive"/>
+					<img
+						style={imgStyle}
+						src={imgsrc}
+						alt={details.text}
+						className="img-responsive"/>
 				</div>
 				<div className="col-sm-6">
 					<h2>{details.text}</h2>
 					<h3>${details.price}</h3>
 					<div className="row">
 						<span>Size:</span>
-						<select name="sizeChoice" style={sizeListStyles} value={this.state.sizeChoice} onChange={this.onChoiceChange}>
+						<select
+							name="sizeChoice"
+							style={sizeListStyles}
+							value={this.state.sizeChoice}
+							onChange={this.onChoiceChange}>
 							{this.renderLists(details.sizes, "option")}
 						</select>
 					</div>
 					<div className="row">
 						<span>Quantity:</span>
-						<select name="quantityChoice" style={quantityListStyles} value={this.state.quantityChoice} onChange={this.onChoiceChange}>
+						<select
+							name="quantityChoice"
+							style={quantityListStyles}
+							value={this.state.quantityChoice}
+							onChange={this.onChoiceChange}>
 							{this.renderLists([1, 2, 3, 4, 5], "option")}
 						</select>
 					</div>
