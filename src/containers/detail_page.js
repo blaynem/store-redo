@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { addToCart } from '../actions';
 
 import Items from '../data/items';
 
@@ -13,7 +16,7 @@ class DetailPage extends Component {
 
 	// on button click add to cart
 	onClick(e) {
-		console.log(this.state.sizeChoice, this.state.quantityChoice)
+		this.props.addToCart();
 	}
 
 	// on selection of {name}, switch to new selected value
@@ -134,4 +137,8 @@ class DetailPage extends Component {
 	}
 }
 
-export default DetailPage;
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ addToCart }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(DetailPage);
