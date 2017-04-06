@@ -10,7 +10,6 @@ class ListPage extends Component {
 		const itemsData = Items[catIdParms]
 
 		return itemsData.map((item) => {
-			console.log(item);
 			return <ListPageItems key={item.code} lists={item} catId={catIdParms}/>
 		})
 	}
