@@ -16,7 +16,10 @@ class DetailPage extends Component {
 
 	// on button click add to cart
 	onClick(e) {
-		this.props.addToCart();
+		const itemCode = (this.props.match.params.itemId)
+		const { sizeChoice, quantityChoice } = this.state
+
+		this.props.addToCart(itemCode, sizeChoice, quantityChoice);
 	}
 
 	// on selection of {name}, switch to new selected value
@@ -137,8 +140,8 @@ class DetailPage extends Component {
 	}
 }
 
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ addToCart }, dispatch)
+function mapStateToProps(state) {
+	return { cart: state.cart }
 }
 
-export default connect(null, mapDispatchToProps)(DetailPage);
+export default connect(mapStateToProps, { addToCart })(DetailPage);
