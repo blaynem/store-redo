@@ -14,6 +14,7 @@ class DetailPage extends Component {
 	}
 
 	// on button click add to cart
+	// needs to pass categoryId(catId), itemId, sizeChoice, and quantityChoice in that order.
 	onClick(e) {
 		const { itemId, catId } = this.props.match.params
 		const { sizeChoice, quantityChoice } = this.state

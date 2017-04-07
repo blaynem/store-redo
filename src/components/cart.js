@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Items from '../data/items';
+
 class Cart extends Component {
 	renderCart() {
 
-		return this.props.cart.map((items, i) => {
+		return this.props.cart.map((items, i) => {			
+			var itemName = "";
+			// loops through the specific category of Data Items, then sets itemName to 
+			// the correct Items.category.text
+			Items[items.category].forEach((itemThing) => {
+				if (itemThing.code === items.code) {
+					itemName = itemThing.text
+					return 
+				}
+			})
+
 			return (
-				<li style={{height:"100px"}} className="list-group-item" key={items + i}>
+				<li style={{height:"85px"}} className="list-group-item" key={items + i}>
 					<div className="row">
 						<div className="col-xs-1">
 							<img style={{maxWidth:"100%"}} src={`/images/${items.code}b.jpg`} alt="yes"/>
 						</div>
 						<div className="col-xs-4">
-							{items.code}
+							{itemName}
 						</div>
 						<div className="col-xs-2">
 							<h4>Qty: {items.qty}</h4>
@@ -37,7 +49,7 @@ class Cart extends Component {
 			<div>
 				<div className="row">
 					<h2 style={{textAlign:"center"}}>Cart</h2>
-					<h3 style={{textAlign:"center"}}>(# items)</h3>
+					<h3 style={{textAlign:"center"}}>({this.props.cart.length} items)</h3>
 				</div>
 				<div className="row">
 					<ul className="list-group">
