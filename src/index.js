@@ -11,11 +11,11 @@ let store = createStore(reducers);
 import { addToCart } from './actions';
 
 console.log(store.getState());
-store.dispatch(addToCart("132-423", "md", 3));
+store.dispatch(addToCart("mens_outerwear", "10-15068", "md", 3));
 console.log(store.getState());
-store.dispatch(addToCart("3213-22", "sm", 1));
+store.dispatch(addToCart("ladies_outerwear", "10-25058", "sm", 1));
 console.log(store.getState());
-store.dispatch(addToCart("1239812", "xs", 2));
+store.dispatch(addToCart("mens_tshirts", "10-13239", "xs", 2));
 console.log(store.getState());
 
 ReactDOM.render(

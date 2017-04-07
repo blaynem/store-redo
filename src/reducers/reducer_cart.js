@@ -8,6 +8,7 @@ export default function(state = INITIAL_STATE, action) {
 			return [
 				...state,
 				{
+					category: action.category,
 					code: action.code,
 					size: action.size,
 					qty: action.qty

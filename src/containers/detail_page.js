@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions';
 
@@ -16,10 +15,10 @@ class DetailPage extends Component {
 
 	// on button click add to cart
 	onClick(e) {
-		const itemCode = (this.props.match.params.itemId)
+		const { itemId, catId } = this.props.match.params
 		const { sizeChoice, quantityChoice } = this.state
 
-		this.props.addToCart(itemCode, sizeChoice, quantityChoice);
+		this.props.addToCart(catId, itemId, sizeChoice, quantityChoice);
 	}
 
 	// on selection of {name}, switch to new selected value
