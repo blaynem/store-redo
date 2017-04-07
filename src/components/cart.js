@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Items from '../data/items';
 
 class Cart extends Component {
 	renderCart() {
-
-		return this.props.cart.map((items, i) => {			
+		// gets the data from the props.cart, then maps over it to return the list of items in cart
+		return this.props.cart.map((cartItem, i) => {			
 			var specificItem = {};
 			// loops through the specific category of Data Items, then sets itemName to 
 			// the correct Items.category.text
-			Items[items.category].forEach((itemThing) => {
-				if (itemThing.code === items.code) {
-					specificItem = itemThing
+			Items[cartItem.category].forEach((dataItem) => {
+				if (dataItem.code === cartItem.code) {
+					specificItem = dataItem
 					return 
 				}
 			})
 
+			// cartItem = mapped over store cart, so this.props.cart[0]
+			// specificItem = gets the data from /data/items, maps over it all until cartItem.code is equal to /data/items["mens_outerwear"]
 			return (
-				<li style={{height:"85px"}} className="list-group-item" key={items + i}>
+				<li style={{height:"85px"}} className="list-group-item" key={cartItem + i}>
 					<div className="row">
 						<div className="col-xs-1">
-							<img style={{maxWidth:"100%"}} src={`/images/${items.code}b.jpg`} alt="yes"/>
+							<Link to={`/detail/${cartItem.category}/${specificItem.code}`}><img style={{maxWidth:"100%"}} src={`/images/${cartItem.code}b.jpg`} alt="yes"/></Link>
 						</div>
 						<div className="col-xs-4">
-							{specificItem.text}
+							<Link to={`/detail/${cartItem.category}/${specificItem.code}`}>{specificItem.text}</Link>
 						</div>
 						<div className="col-xs-2">
-							<h4>Qty: {items.qty}</h4>
+							<h4>Qty: {cartItem.qty}</h4>
 						</div>
 						<div className="col-xs-2">
-							Size: {items.size}
+							Size: {cartItem.size}
 						</div>
 						<div className="col-xs-2">
 							Price: ${specificItem.price}

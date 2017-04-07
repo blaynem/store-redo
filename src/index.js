@@ -10,13 +10,11 @@ let store = createStore(reducers);
 
 import { addToCart } from './actions';
 
-console.log(store.getState());
+console.log("store start", store.getState());
 store.dispatch(addToCart("mens_outerwear", "10-15068", "md", 3));
-console.log(store.getState());
 store.dispatch(addToCart("ladies_outerwear", "10-25058", "sm", 1));
-console.log(store.getState());
 store.dispatch(addToCart("mens_tshirts", "10-13239", "xs", 2));
-console.log(store.getState());
+console.log("store after multiple dispatches", store.getState());
 
 ReactDOM.render(
 	<Provider store={store}>
