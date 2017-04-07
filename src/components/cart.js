@@ -7,12 +7,12 @@ class Cart extends Component {
 	renderCart() {
 
 		return this.props.cart.map((items, i) => {			
-			var itemName = "";
+			var specificItem = {};
 			// loops through the specific category of Data Items, then sets itemName to 
 			// the correct Items.category.text
 			Items[items.category].forEach((itemThing) => {
 				if (itemThing.code === items.code) {
-					itemName = itemThing.text
+					specificItem = itemThing
 					return 
 				}
 			})
@@ -24,7 +24,7 @@ class Cart extends Component {
 							<img style={{maxWidth:"100%"}} src={`/images/${items.code}b.jpg`} alt="yes"/>
 						</div>
 						<div className="col-xs-4">
-							{itemName}
+							{specificItem.text}
 						</div>
 						<div className="col-xs-2">
 							<h4>Qty: {items.qty}</h4>
@@ -33,7 +33,7 @@ class Cart extends Component {
 							Size: {items.size}
 						</div>
 						<div className="col-xs-2">
-							Price: $45.00
+							Price: ${specificItem.price}
 						</div>
 						<div className="col-xs-1">
 							X
