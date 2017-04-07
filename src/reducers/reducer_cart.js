@@ -15,11 +15,13 @@ export default function(state = INITIAL_STATE, action) {
 				}
 			]
 		case REMOVE_FROM_CART:
-			console.log(action.id)
-			return [
-				...state.slice(0, action.id),
-				...state.slice(action.id + 1)
-			]
+			return state.filter((item) => {
+				return item !== state[action.id]
+			})
+			// return [
+			// 	...state.slice(0, action.id),
+			// 	...state.slice(action.id + 1)
+			// ]
 		default:
 			return state
 	}

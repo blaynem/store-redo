@@ -23,6 +23,7 @@ class Cart extends Component {
 	renderCart() {
 		// gets the data from the props.cart, then maps over it to return the list of items in cart
 		return this.props.cart.map((cartItem, i) => {			
+			console.log(cartItem, i)
 			var specificItem = {};
 			// loops through the specific category of Data Items, then sets itemName to 
 			// the correct Items.category.text
