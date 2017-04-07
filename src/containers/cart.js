@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// import CartItems from '../components/cart_items';
 import Items from '../data/items';
 
 class Cart extends Component {
