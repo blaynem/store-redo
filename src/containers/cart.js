@@ -14,7 +14,6 @@ class Cart extends Component {
 	}
 
 	removeItem(e) {
-		console.log(e.target.id)
 		const toRemove = (e.target.id);
 
 		this.props.removeFromCart(toRemove)
@@ -23,7 +22,6 @@ class Cart extends Component {
 	renderCart() {
 		// gets the data from the props.cart, then maps over it to return the list of items in cart
 		return this.props.cart.map((cartItem, i) => {			
-			console.log(cartItem, i)
 			var specificItem = {};
 			// loops through the specific category of Data Items, then sets itemName to 
 			// the correct Items.category.text
@@ -40,7 +38,7 @@ class Cart extends Component {
 				<li style={{height:"85px"}} className="list-group-item" key={cartItem + i}>
 					<div className="row">
 						<div className="col-xs-1">
-							<Link to={`/detail/${cartItem.category}/${specificItem.code}`}><img style={{maxWidth:"100%"}} src={`/images/${cartItem.code}b.jpg`} alt="yes"/></Link>
+							<Link to={`/detail/${cartItem.category}/${specificItem.code}`}><img style={{maxWidth:"100%"}} src={`/images/${cartItem.code}B.jpg`} alt="yes"/></Link>
 						</div>
 						<div className="col-xs-4">
 							<Link to={`/detail/${cartItem.category}/${specificItem.code}`}>{specificItem.text}</Link>
