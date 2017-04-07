@@ -11,9 +11,9 @@ export function addToCart(category, code, size, qty) {
 	};
 }
 
-export function removeFromCart(code) {
+export function removeFromCart(id) {
 	return {
 		type: REMOVE_FROM_CART,
-		code
+		id
 	};
 }

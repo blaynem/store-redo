@@ -14,6 +14,12 @@ export default function(state = INITIAL_STATE, action) {
 					qty: action.qty
 				}
 			]
+		case REMOVE_FROM_CART:
+			console.log(action.id)
+			return [
+				...state.slice(0, action.id),
+				...state.slice(action.id + 1)
+			]
 		default:
 			return state
 	}
