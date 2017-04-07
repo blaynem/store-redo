@@ -16,10 +16,6 @@ export default function(state = INITIAL_STATE, action) {
 			]
 		case REMOVE_FROM_CART:
 			return state.filter((item, index) => index != action.id);
-			// return [
-			// 	...state.slice(0, action.id),
-			// 	...state.slice(action.id + 1)
-			// ]
 		default:
 			return state
 	}
