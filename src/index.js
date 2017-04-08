@@ -11,10 +11,10 @@ let store = createStore(reducers);
 import { addToCart, removeFromCart } from './actions';
 
 // console.log("store start", store.getState());
-store.dispatch(addToCart("mens_outerwear", "10-15068", "md", 3));
-store.dispatch(addToCart("ladies_outerwear", "10-25058", "sm", 1));
-store.dispatch(addToCart("mens_tshirts", "10-13239", "xs", 2));
-store.dispatch(addToCart("ladies_outerwear", "10-25058", "sm", 3));
+// store.dispatch(addToCart("mens_outerwear", "10-15068", "md", 3));
+// store.dispatch(addToCart("ladies_outerwear", "10-25058", "sm", 1));
+// store.dispatch(addToCart("mens_tshirts", "10-13239", "xs", 2));
+// store.dispatch(addToCart("ladies_outerwear", "10-25058", "sm", 3));
 // store.dispatch(addToCart("mens_tshirts", "10-13239", "xs", 1));
 // console.log("store after multiple dispatches", store.getState());
 // store.dispatch(removeFromCart(0))

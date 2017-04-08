@@ -31,12 +31,38 @@ class Cart extends Component {
 		return total
 	}
 
+	// will only render the checkout button and total if there are items in cart
+	renderCheckouts() {
+		const totalPrice = this.getTotal().toFixed(2)
+		if (this.props.cart.length > 0) {
+			return (
+				<div>
+					<h4 style={{display: "inline-block"}} className="pull-right">Total: {this.getTotal().toFixed(2)}</h4>
+					<button 
+						style={{display: "inline-block"}}
+						className="btn pull-right"
+						onClick={function click(){alert("OR NAH")}}>Checkout</button>
+				</div>
+			)
+		}
+		return <h3 className="text-center" >Your <i className="glyphicon glyphicon-shopping-cart"></i> is empty.</h3>
+	}
+
+	// if cart is empty, it won't display how many items are inside
+	renderCheckoutTotalItems() {
+		if (this.props.cart.length > 0) {
+			return <h3 style={{textAlign:"center"}}>({this.props.cart.length} items)</h3>
+		}
+	}
+
+	// runs the removeFromCart action
 	removeItem(e) {
 		const toRemove = (e.target.id);
 
 		this.props.removeFromCart(toRemove)
 	}
 
+	// renders the entire cart based on items in state.cart
 	renderCart() {
 		// gets the data from the props.cart, then maps over it to return the list of items in cart
 		return this.props.cart.map((cartItem, i) => {			
@@ -85,7 +111,7 @@ class Cart extends Component {
 			<div>
 				<div className="row">
 					<h2 style={{textAlign:"center"}}>Cart</h2>
-					<h3 style={{textAlign:"center"}}>({this.props.cart.length} items)</h3>
+					{this.renderCheckoutTotalItems()}
 				</div>
 				<div className="row">
 					<ul className="list-group">
@@ -93,11 +119,7 @@ class Cart extends Component {
 					</ul>
 				</div>
 				<div className="row checkout-box">
-					<h4 style={{display: "inline-block"}} className="pull-right">Total: {this.getTotal().toFixed(2)}</h4>
-					<button 
-						style={{display: "inline-block"}}
-						className="btn pull-right"
-						onClick={function click(){alert("OR NAH")}}>Checkout</button>
+					{this.renderCheckouts()}
 				</div>
 			</div>
 		)
