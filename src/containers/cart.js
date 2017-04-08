@@ -103,8 +103,12 @@ class Cart extends Component {
 						{this.renderCart()}
 					</ul>
 				</div>
-				<div className="row">
-					<h4>Total: {this.state.total.toFixed(2)}</h4>
+				<div className="row checkout-box">
+					<h4 style={{display: "inline-block"}} className="pull-right">Total: {this.state.total.toFixed(2)}</h4>
+					<button 
+						style={{display: "inline-block"}}
+						className="btn pull-right"
+						onClick={function click(){alert("OR NAH")}}>Checkout</button>
 				</div>
 			</div>
 		)
