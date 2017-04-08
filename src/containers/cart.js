@@ -10,24 +10,14 @@ class Cart extends Component {
 	constructor(props) {
 		super(props)
 
-		this.getTotal(this.props);
-		this.state = { total: this.getTotal(this.props) }
 		this.removeItem = this.removeItem.bind(this);
 	}
 
-	componentWillReceiveProps(nextProps){
-		const oldTotal = this.state.total
-		const newTotal = this.getTotal(nextProps)
-		const difference = oldTotal - newTotal
-
-		this.setState({ total: this.state.total - difference})
-	}
-
 	// meant to be called with either this.props or nextProps
-	getTotal(propsPassed){
+	getTotal(){
 		let total = 0;
 		// gets the data from the props.cart, then maps over it to return the list of items in cart
-		propsPassed.cart.map((cartItem, i) => {		
+		this.props.cart.map((cartItem, i) => {		
 			// loops through the specific category of Data Items, finds the price
 			// of the specific item, then multiplies it by the quantity to get total
 			Items[cartItem.category].forEach((dataItem) => {
@@ -38,7 +28,6 @@ class Cart extends Component {
 				return
 			})
 		})
-		console.log(total)
 		return total
 	}
 
@@ -104,7 +93,7 @@ class Cart extends Component {
 					</ul>
 				</div>
 				<div className="row checkout-box">
-					<h4 style={{display: "inline-block"}} className="pull-right">Total: {this.state.total.toFixed(2)}</h4>
+					<h4 style={{display: "inline-block"}} className="pull-right">Total: {this.getTotal().toFixed(2)}</h4>
 					<button 
 						style={{display: "inline-block"}}
 						className="btn pull-right"
