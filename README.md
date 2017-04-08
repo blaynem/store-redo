@@ -8,7 +8,7 @@ Creating a shop similar to the polymer-shop-app, but with React. Using it's deta
 - Actual styling outside of bootstrap layout
 - ~~Back button to work~~
 - ~~# of items in cart should should actually quantity of items, not just how many rows there are~~
--- I actually think it's fine this way after viewing some more stuff.
+- - I actually think it's fine this way after viewing some more stuff.
 - If you add an item of same size/type, it should be added to quantity, not another row itself.
 - ~~Need to calculate total~~
 - Add a fake checkout thing
