@@ -3,6 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Creating a Shop-App
 Creating a shop similar to the shop-poymer-project app, but with React. Using it's details/pictures/layout, but coding it on my own.
 
+# Try it out
+You can give it a try [here](blaynestoretest.surge.sh).
+
 ## Tools Used
 - React
 - React-Router v4
@@ -29,8 +32,3 @@ Couldn't get redux working, ended up being that I was not mapping state to my pr
 Had a mapping issue where if you deleted an item in your cart, it would delete every item below it as well. Ended up switching the reducer to a filter and it worked correctly. Wasn't able to identify what the real issue was.
 
 Learned a bit more on how to structure data, though I should ultimately refactor it/rename some things. 
-
-### Comments
-Though it's currently being worked on, I am constantly pushing updates with the help of surge.sh. You can see the most recent version of the site [here](http://blaynestoretest.surge.sh/)
-
-Also feel free to checkout my portfolio page [here](http://blaynemarjama.surge.sh/)
