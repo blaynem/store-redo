@@ -28,14 +28,11 @@ class Cart extends Component {
 		let total = 0;
 		// gets the data from the props.cart, then maps over it to return the list of items in cart
 		propsPassed.cart.map((cartItem, i) => {		
-			var specificItem = {};	
 			// loops through the specific category of Data Items, finds the price
 			// of the specific item, then multiplies it by the quantity to get total
 			Items[cartItem.category].forEach((dataItem) => {
 				if (dataItem.code === cartItem.code) {
 					total += (dataItem.price * cartItem.qty)
-					
-					specificItem = dataItem
 					return 
 				}
 				return
