@@ -10,7 +10,10 @@ class Cart extends Component {
 	constructor(props) {
 		super(props)
 
+<<<<<<< HEAD
 		this.state = { total:0 }
+=======
+>>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 		this.removeItem = this.removeItem.bind(this);
 	}
 
@@ -20,6 +23,7 @@ class Cart extends Component {
 		this.props.removeFromCart(toRemove)
 	}
 
+<<<<<<< HEAD
 	cartPrice(price, qty) {
 		console.log(this.state.total)
 		console.log(price)
@@ -30,6 +34,8 @@ class Cart extends Component {
 		// this.setState({ total: total += itemTotal})
 	}
 
+=======
+>>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 	renderCart() {
 		// gets the data from the props.cart, then maps over it to return the list of items in cart
 		return this.props.cart.map((cartItem, i) => {			
@@ -39,8 +45,11 @@ class Cart extends Component {
 			Items[cartItem.category].forEach((dataItem) => {
 				if (dataItem.code === cartItem.code) {
 					specificItem = dataItem
+<<<<<<< HEAD
 					// console.log(cartItem.qty)
 					this.cartPrice(parseInt(specificItem.price), cartItem.qty)
+=======
+>>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 					return 
 				}
 			})
@@ -75,7 +84,10 @@ class Cart extends Component {
 	}
 
 	render() {
+<<<<<<< HEAD
 		let total = 0;
+=======
+>>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 		return(
 			<div>
 				<div className="row">
@@ -87,9 +99,12 @@ class Cart extends Component {
 						{this.renderCart()}
 					</ul>
 				</div>
+<<<<<<< HEAD
 				<div className="row">
 					<h4>Total: {this.state.total}</h4>
 				</div>
+=======
+>>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			</div>
 		)
 	}
