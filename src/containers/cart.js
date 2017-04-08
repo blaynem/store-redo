@@ -10,24 +10,45 @@ class Cart extends Component {
 	constructor(props) {
 		super(props)
 
-		this.state = { total:0 }
+		this.getTotal(this.props);
+		this.state = { total: this.getTotal(this.props) }
 		this.removeItem = this.removeItem.bind(this);
+	}
+
+	componentWillReceiveProps(nextProps){
+		const oldTotal = this.state.total
+		const newTotal = this.getTotal(nextProps)
+		const difference = oldTotal - newTotal
+
+		this.setState({ total: this.state.total - difference})
+	}
+
+	// meant to be called with either this.props or nextProps
+	getTotal(propsPassed){
+		let total = 0;
+		// gets the data from the props.cart, then maps over it to return the list of items in cart
+		propsPassed.cart.map((cartItem, i) => {		
+			var specificItem = {};	
+			// loops through the specific category of Data Items, finds the price
+			// of the specific item, then multiplies it by the quantity to get total
+			Items[cartItem.category].forEach((dataItem) => {
+				if (dataItem.code === cartItem.code) {
+					total += (dataItem.price * cartItem.qty)
+					
+					specificItem = dataItem
+					return 
+				}
+				return
+			})
+		})
+		console.log(total)
+		return total
 	}
 
 	removeItem(e) {
 		const toRemove = (e.target.id);
 
 		this.props.removeFromCart(toRemove)
-	}
-
-	cartPrice(price, qty) {
-		console.log(this.state.total)
-		console.log(price)
-		console.log(qty)
-		console.log(price * qty)
-		// const itemTotal =
-
-		// this.setState({ total: total += itemTotal})
 	}
 
 	renderCart() {
@@ -39,10 +60,9 @@ class Cart extends Component {
 			Items[cartItem.category].forEach((dataItem) => {
 				if (dataItem.code === cartItem.code) {
 					specificItem = dataItem
-					// console.log(cartItem.qty)
-					this.cartPrice(parseInt(specificItem.price), cartItem.qty)
 					return 
 				}
+				return
 			})
 
 			// cartItem = mapped over store cart, so this.props.cart[0]
@@ -75,7 +95,6 @@ class Cart extends Component {
 	}
 
 	render() {
-		let total = 0;
 		return(
 			<div>
 				<div className="row">
@@ -88,7 +107,7 @@ class Cart extends Component {
 					</ul>
 				</div>
 				<div className="row">
-					<h4>Total: {this.state.total}</h4>
+					<h4>Total: {this.state.total.toFixed(2)}</h4>
 				</div>
 			</div>
 		)

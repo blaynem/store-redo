@@ -18,11 +18,11 @@ class DetailPage extends Component {
 	onClick(e) {
 		const { itemId, catId } = this.props.match.params
 		const { sizeChoice, quantityChoice } = this.state
-
 		this.props.addToCart(catId, itemId, sizeChoice, quantityChoice);
 	}
 
 	// on selection of {name}, switch to new selected value
+	// {name} is determined by the selects name property.
 	onChoiceChange(e) {
 		const target = e.target
 		const value = target.value
