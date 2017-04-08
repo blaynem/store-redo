@@ -4,7 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Creating a shop similar to the shop-poymer-project app, but with React. Using it's details/pictures/layout, but coding it on my own.
 
 # Try it out
-You can give it a try [here](blaynestoretest.surge.sh).
+You can see the current working site [here](blaynestoretest.surge.sh).
+
+-or-
+
+
+Clone/download this repo. Inside of the folder directory, run `npm install` and then run `npm start`. Your browser should open to a localhost, and you'll be able to test out the store.
 
 ## Tools Used
 - React
