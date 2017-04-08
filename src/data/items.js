@@ -4,11 +4,7 @@ const items = {
 			code:"10-15068",
 			id:1,
 			text:"Men's Tech Shell Full-Zip",
-<<<<<<< HEAD
 			price: 50.20,
-=======
-			price: "50.20",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-15068A",
 				"10-15068B"
@@ -33,11 +29,7 @@ const items = {
 			code:"10-14154",
 			id:2,
 			text:"Anvil L/S Crew Neck - Grey",
-<<<<<<< HEAD
 			price: 22.15,
-=======
-			price: "22.15",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-14154A",
 				"10-14154B"
@@ -59,11 +51,7 @@ const items = {
 			code:"10-14157",
 			id:3,
 			text:"Green Flex Fleece Zip Hoodie",
-<<<<<<< HEAD
 			price: 45.65,
-=======
-			price: "45.65",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-14157A",
 				"10-14157B"
@@ -88,11 +76,7 @@ const items = {
 		{
 			code:"10-24102",
 			id:1,
-<<<<<<< HEAD
 			price: 41.60,
-=======
-			price: "41.60",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			text:"Ladies Modern Stretch Full-Zip",
 			img_src: [
 				"10-24102A",
@@ -120,11 +104,7 @@ const items = {
 			code:"10-25058",
 			id:2,
 			text:"Ladies Colorblock Wind Jacket",
-<<<<<<< HEAD
 			price: 45.90,
-=======
-			price: "45.90",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-25058A",
 				"10-25058B"
@@ -149,11 +129,7 @@ const items = {
 			code:"10-24097",
 			id:3,
 			text:"Ladies Sonoma Hybrid Knit Jacket",
-<<<<<<< HEAD
 			price: 84.85,
-=======
-			price: "84.85",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-24097A",
 				"10-24097B"
@@ -176,11 +152,7 @@ const items = {
 		{
 			code:"10-13256",
 			id:1,
-<<<<<<< HEAD
 			price: 17.05,
-=======
-			price: "17.05",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			text:"Inbox - Subtle Actions T-Shirt",
 			img_src: [
 				"10-13256A",
@@ -203,11 +175,7 @@ const items = {
 			code:"10-13239",
 			id:2,
 			text:"Adult Android Superhero T-Shirt",
-<<<<<<< HEAD
 			price: 14.95,
-=======
-			price: "14.95",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-13239A",
 				"10-13239B"
@@ -232,11 +200,7 @@ const items = {
 			code:"10-13018",
 			id:3,
 			text:"Organic Cotton Android walking with dog T-Shirt",
-<<<<<<< HEAD
 			price: 17.25,
-=======
-			price: "17.25",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-13018A",
 				"10-13018B"
@@ -260,11 +224,7 @@ const items = {
 		{
 			code:"10-23179",
 			id:1,
-<<<<<<< HEAD
 			price: 16.40,
-=======
-			price: "16.40",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			text:"Ladies Gmail T-Shirt",
 			img_src: [
 				"10-23179A",
@@ -288,11 +248,7 @@ const items = {
 			code:"10-23226",
 			id:2,
 			text:"Ladies Google New York T-Shirt",
-<<<<<<< HEAD
 			price: 18.35,
-=======
-			price: "18.35",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-23226A",
 				"10-23226B"
@@ -316,11 +272,7 @@ const items = {
 			code:"10-23180",
 			id:3,
 			text:"Ladies Chrome T-Shirt",
-<<<<<<< HEAD
 			price: 13.30,
-=======
-			price: "13.30",
->>>>>>> 73476244515d4238cec2fa7c0cf0e990fd35a280
 			img_src: [
 				"10-23180A",
 				"10-23180B"
