@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Creating a shop similar to the shop-poymer-project app, but with React. Using it's details/pictures/layout, but coding it on my own.
 
 # Try it out
-You can see the current working site [here](blaynestoretest.surge.sh).
+You can see the current working site [here](http://blaynestoretest.surge.sh).
 
 -or-
 
